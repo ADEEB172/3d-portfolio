@@ -14,19 +14,15 @@ const Computers = ({ isMobile }) => {
         angle={0.12}
         penumbra={1}
         intensity={1}
-        // castShadow
-        // shadow-mapSize={1024}
+        castShadow
+        shadow-mapSize={1024}
       />
-      <mesh>
-        <boxGeometry args={[2, 2, 2]} />
-        <meshStandardMaterial color="orange" />
-      </mesh>
-      {/* <primitive
+      <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
         position={isMobile ? [0, -3, -2.2] : [0, -3.75, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
-      /> */}
+      />
     </mesh>
   );
 };
@@ -37,7 +33,7 @@ const ComputersCanvas = () => {
   useEffect(() => {
     // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-
+    
     // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
@@ -50,28 +46,12 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    // <Canvas
-    //   frameloop="demand"
-    //   shadows
-    //   camera={{ position: [20, 3, 5], fov: 25 }}
-    //   gl={{ preserveDrawingBuffer: true }}
-    // >
-    // <Canvas
-    //   frameloop="demand"
-    //   // shadows
-    //   dpr={[1, 1.5]}
-    //   camera={{ position: [20, 3, 5], fov: 25 }}
-    //   gl={{ preserveDrawingBuffer: true }}
-    // >
-      <Canvas
-        dpr={1}
-        camera={{ position: [20, 3, 5], fov: 25 }}
-        gl={{
-          antialias: false,
-          alpha: true,
-          powerPreference: "default",
-        }}
-      >
+    <Canvas
+      frameloop="demand"
+      shadows
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
+    >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
@@ -80,7 +60,7 @@ const ComputersCanvas = () => {
         />
         <Computers isMobile={isMobile} />
       </Suspense>
-      {/* <Preload all /> */}
+      <Preload all />
     </Canvas>
   );
 };
