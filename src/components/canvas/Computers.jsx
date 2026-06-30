@@ -17,12 +17,10 @@ const Computers = ({ isMobile }) => {
         // castShadow
         // shadow-mapSize={1024}
       />
-      <primitive
-        object={computer.scene}
-        scale={0.5}
-        position={[0, -2, 0]}
-        rotation={[0, 0, 0]}
-      />
+      <mesh>
+  <boxGeometry args={[2, 2, 2]} />
+  <meshStandardMaterial color="orange" />
+</mesh>
       {/* <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
