@@ -58,4 +58,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(About, "about", "pt-0 sm:pt-0 pb-0 sm:pb-0");

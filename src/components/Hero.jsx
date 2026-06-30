@@ -5,22 +5,23 @@ import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
-      <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
-      >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915eff]">Mohd Adeeb</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I Develop 3D visuals, user <br className="sm:block hidden" />{" "}
-            interfaces and web
-          </p>
+    <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden px-4 sm:min-h-screen sm:px-0">
+      <div className={`${styles.paddingX} relative z-10 mx-auto w-full max-w-7xl`}>
+        <div className="flex flex-col items-center justify-center text-center">
+          <div className="mb-3 flex flex-col items-center sm:mb-4" />
+          <div className="w-full max-w-2xl px-2 sm:px-0">
+            <h1
+              className={`${styles.heroHeadText} text-white leading-tight sm:leading-[1.1]`}
+            >
+              Hi, I'm <span className="text-[#915eff]">Mohd Adeeb</span>
+            </h1>
+            <p
+              className={`${styles.heroSubText} mt-2 leading-snug text-white-100 sm:leading-[40px]`}
+            >
+              I Develop full-stack websites with modern design and smooth user
+              experiences.
+            </p>
+          </div>
         </div>
       </div>
       {/* <ComputersCanvas /> */}
