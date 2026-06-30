@@ -14,8 +14,8 @@ const Computers = ({ isMobile }) => {
         angle={0.12}
         penumbra={1}
         intensity={1}
-        castShadow
-        shadow-mapSize={1024}
+        // castShadow
+        // shadow-mapSize={1024}
       />
       <primitive
         object={computer.scene}
@@ -33,7 +33,7 @@ const ComputersCanvas = () => {
   useEffect(() => {
     // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-    
+
     // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
@@ -46,9 +46,16 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
+    // <Canvas
+    //   frameloop="demand"
+    //   shadows
+    //   camera={{ position: [20, 3, 5], fov: 25 }}
+    //   gl={{ preserveDrawingBuffer: true }}
+    // >
     <Canvas
       frameloop="demand"
-      shadows
+      // shadows
+      dpr={[1, 1.5]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
@@ -60,7 +67,7 @@ const ComputersCanvas = () => {
         />
         <Computers isMobile={isMobile} />
       </Suspense>
-      <Preload all />
+      {/* <Preload all /> */}
     </Canvas>
   );
 };
