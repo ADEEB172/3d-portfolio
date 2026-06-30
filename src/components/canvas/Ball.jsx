@@ -13,7 +13,11 @@ import CanvasLoader from "../Loader";
 const Ball = (props) => {
    console.log("IMAGE URL:", props.imgUrl);
 
+  // const decal = useTexture(props.imgUrl);
   const decal = useTexture(props.imgUrl);
+
+decal.flipY = false;
+decal.needsUpdate = true;
   
 
   console.log("TEXTURE:", decal);
@@ -38,12 +42,12 @@ const Ball = (props) => {
           map={decal}
           flatShading
         /> */}
-        {/* <Decal
+        <Decal
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
-        /> */}
+        />
       </mesh>
     </Float>
   );
