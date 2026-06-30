@@ -7,6 +7,7 @@ const Computers = ({ isMobile }) => {
   const computer = useGLTF("/desktop_pc/scene.gltf");
   return (
     <mesh>
+      <ambientLight intensity={0.5} />
       <hemisphereLight intensity={5} groundColor="black" />
       <pointLight intensity={3} />
       <spotLight
@@ -31,29 +32,38 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-    
-    // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
 
-    // Add a listener for changes to the media query
     const handleChange = (e) => setIsMobile(e.matches);
-    mediaQuery.addEventListener("change", handleChange);
 
-    // Clean up the listener when the component unmounts
-    return () => mediaQuery.removeEventListener("change", handleChange);
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleChange);
+    } else {
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
+    };
   }, []);
 
   const cameraSettings = {
-    position: isMobile ? [15, 2, 3] : [20, 3, 5],
+    position: isMobile ? [14, 2, 3] : [20, 3, 5],
     fov: isMobile ? 30 : 25,
+    near: 0.1,
+    far: 200,
   };
 
   return (
     <Canvas
       className="w-full h-full"
       frameloop="demand"
+      dpr={[1, 2]}
       shadows
       camera={cameraSettings}
       gl={{ preserveDrawingBuffer: true }}
