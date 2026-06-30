@@ -19,8 +19,8 @@ const Computers = ({ isMobile }) => {
       />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.75, -1.5]}
+        scale={isMobile ? 0.65 : 0.75}
+        position={isMobile ? [0, -2.2, -1.5] : [0, -3.75, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -45,11 +45,17 @@ const ComputersCanvas = () => {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
+  const cameraSettings = {
+    position: isMobile ? [15, 2, 3] : [20, 3, 5],
+    fov: isMobile ? 30 : 25,
+  };
+
   return (
     <Canvas
+      className="w-full h-full"
       frameloop="demand"
       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={cameraSettings}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
