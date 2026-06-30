@@ -18,9 +18,9 @@ const Computers = ({ isMobile }) => {
         // shadow-mapSize={1024}
       />
       <mesh>
-  <boxGeometry args={[2, 2, 2]} />
-  <meshStandardMaterial color="orange" />
-</mesh>
+        <boxGeometry args={[2, 2, 2]} />
+        <meshStandardMaterial color="orange" />
+      </mesh>
       {/* <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
@@ -56,13 +56,22 @@ const ComputersCanvas = () => {
     //   camera={{ position: [20, 3, 5], fov: 25 }}
     //   gl={{ preserveDrawingBuffer: true }}
     // >
-    <Canvas
-      frameloop="demand"
-      // shadows
-      dpr={[1, 1.5]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+    // <Canvas
+    //   frameloop="demand"
+    //   // shadows
+    //   dpr={[1, 1.5]}
+    //   camera={{ position: [20, 3, 5], fov: 25 }}
+    //   gl={{ preserveDrawingBuffer: true }}
+    // >
+      <Canvas
+        dpr={1}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{
+          antialias: false,
+          alpha: true,
+          powerPreference: "default",
+        }}
+      >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
