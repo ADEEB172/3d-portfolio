@@ -1,23 +1,52 @@
-import { BallCanvas } from "./canvas";
-import {SectionWrapper} from '../hoc'
-import { technologies } from '../constants'
+import { motion } from "framer-motion";
+import { SectionWrapper } from "../hoc";
+import { technologies } from "../constants";
 
 const Tech = () => {
   return (
-  <div className="flex flex-wrap justify-center gap-10">
-    {technologies.map((technology) => (
-     <div className="w-28 h-28" key={technology.name}>
-       <BallCanvas icon={technology.icon} />
-       {/* <img
-  src={technology.icon}
-  alt={technology.name}
-  className="w-20 h-20 object-contain"
-/> */}
-       <p className="text-center text-white mt-2">{technology.name}</p>
-     </div>
-    ))}
-  </div>
-  )
-}
+    <div className="flex flex-wrap justify-center gap-10">
+      {technologies.map((technology, index) => (
+        <motion.div
+          key={technology.name}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.5,
+            delay: index * 0.1,
+          }}
+          whileHover={{
+            scale: 1.15,
+            rotate: 8,
+          }}
+          whileTap={{ scale: 0.95 }}
+          className="flex flex-col items-center"
+        >
+          <motion.div
+            animate={{
+              y: [0, -8, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
+            className="w-28 h-28 rounded-full bg-tertiary shadow-xl border border-gray-700 flex items-center justify-center cursor-pointer"
+          >
+            <img
+              src={technology.icon}
+              alt={technology.name}
+              className="w-16 h-16 object-contain"
+            />
+          </motion.div>
 
-export default SectionWrapper(Tech, "technologies")
+          <p className="mt-4 text-white text-sm font-medium text-center">
+            {technology.name}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  );
+};
+
+export default SectionWrapper(Tech, "technologies");
