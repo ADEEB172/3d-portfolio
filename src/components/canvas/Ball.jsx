@@ -11,12 +11,12 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  //  console.log("IMAGE URL:", props.imgUrl);
+   console.log("IMAGE URL:", props.imgUrl);
 
-  // const decal = useTexture(props.imgUrl);
-  const decal = useTexture("/src/assets/tech/reactjs.png");
+  const decal = useTexture(props.imgUrl);
+  
 
-  // console.log("TEXTURE:", decal);
+  console.log("TEXTURE:", decal);
   // const [decal] = useTexture([props.imgUrl]);
 
   return (
