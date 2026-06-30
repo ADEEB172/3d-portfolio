@@ -10,28 +10,37 @@ const Tech = () => {
           key={technology.name}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.5,
             delay: index * 0.1,
           }}
-          whileHover={{
-            scale: 1.15,
-            rotate: 8,
-          }}
-          whileTap={{ scale: 0.95 }}
           className="flex flex-col items-center"
         >
           <motion.div
             animate={{
-              y: [0, -8, 0],
+              y: [0, -10, 0],
             }}
+            whileHover={{
+              scale: 1.15,
+              rotate: 10,
+              boxShadow: "0px 0px 30px rgba(145,94,255,0.8)",
+            }}
+            whileTap={{ scale: 0.95 }}
             transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "easeInOut",
+              y: {
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+              scale: {
+                duration: 0.2,
+              },
+              rotate: {
+                duration: 0.2,
+              },
             }}
-            className="w-28 h-28 rounded-full bg-tertiary shadow-xl border border-gray-700 flex items-center justify-center cursor-pointer"
+            className="w-28 h-28 rounded-full bg-tertiary border border-[#915eff]/40 flex items-center justify-center cursor-pointer"
           >
             <img
               src={technology.icon}
