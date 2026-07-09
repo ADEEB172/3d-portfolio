@@ -239,7 +239,7 @@ const projects = [
     ],
     image: pokemon,
     source_code_link: "https://github.com/ADEEB172/pokemon-explorer/tree/main/pokemon-app",
-    live_demo_link: "https://pokemon-explorer-omega.vercel.app/",
+    live_demo_link: "https://pokemon-app-one-nu.vercel.app/",
   },
   {
     name: "Budget Tracker App",
