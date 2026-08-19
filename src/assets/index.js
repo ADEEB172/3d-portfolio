@@ -7,6 +7,10 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
+import bootstrap from "./tech/bootstrap.webp";
+import jwt from "./tech/jwt.webp";
+import express from "./tech/express.png";
+import sql from "./tech/sql.jpg";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
@@ -29,6 +33,8 @@ import tesla from "./company/tesla.png";
 import watch from "./watch.png";
 import pokemon from "./pokemon.png";
 import budget from "./budget.png";
+import forever from "./forever.png";
+import imagify from "./imagify.png";
 export {
   logo,
   backend,
@@ -51,6 +57,10 @@ export {
   tailwind,
   typescript,
   threejs,
+  bootstrap,
+  jwt,
+  express,
+  sql,
   meta,
   shopify,
   starbucks,
@@ -58,4 +68,6 @@ export {
   watch,
   pokemon,
   budget,
+  forever,
+  imagify,
 };

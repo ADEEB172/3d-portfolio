@@ -5,6 +5,10 @@ import {
   web,
   javascript,
   typescript,
+  bootstrap,
+  jwt,
+  express,
+  sql,
   html,
   css,
   reactjs,
@@ -23,6 +27,8 @@ import {
   watch,
   pokemon,
   budget,
+  forever,
+  imagify,
 } from "../assets";
 
 export const navLinks = [
@@ -88,14 +94,26 @@ const technologies = [
     name: "Tailwind CSS",
     icon: tailwind,
   },
-  // {
-  //   name: "Node JS",
-  //   icon: nodejs,
-  // },
-  // {
-  //   name: "MongoDB",
-  //   icon: mongodb,
-  // },
+  {
+    name: "Bootstrap",
+    icon: bootstrap,
+  },
+  {
+    name: "Node JS",
+    icon: nodejs,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
+  {
+    name: "Express",
+    icon: express,
+  },
+  {
+    name: "JWT",
+    icon: jwt,
+  },
   {
     name: "Three JS",
     icon: threejs,
@@ -105,8 +123,12 @@ const technologies = [
     icon: git,
   },
   {
-    name: "figma",
+    name: "Figma",
     icon: figma,
+  },
+  {
+    name: "SQL",
+    icon: sql,
   },
   // {
   //   name: "docker",
@@ -198,6 +220,50 @@ const testimonials = [
 
 const projects = [
   {
+    name: "Forever - An E-Commerce Website",
+    description:
+      "E-commerce website that allows users to browse and purchase products online. It features a clean and modern design, easy navigation, and a secure checkout process.",
+    tags: [
+      {
+        name: "html",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "css",
+        color: "green-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: forever,
+    source_code_link: "https://github.com/ADEEB172/e-commerce-app",
+    live_demo_link: "https://forever-frontend-three-weld.vercel.app",
+  },
+  {
+    name: "Imagify - An Image Editing Website",
+    description:
+      "Web application that allows users to edit and manipulate images online. It features a user-friendly interface, a wide range of editing tools, and the ability to save and share edited images.",
+    tags: [
+      {
+        name: "html",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "css",
+        color: "green-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: imagify,
+    source_code_link: "https://github.com/ADEEB172/Imagify",
+    live_demo_link: "https://imagify-two-tau.vercel.app",
+  },
+  {
     name: "A Watch Website",
     description:
       "A fully responsive watch website that allows users to browse and purchase watches online. It features a clean and modern design, easy navigation, and a secure checkout process.",
@@ -238,7 +304,8 @@ const projects = [
       },
     ],
     image: pokemon,
-    source_code_link: "https://github.com/ADEEB172/pokemon-explorer/tree/main/pokemon-app",
+    source_code_link:
+      "https://github.com/ADEEB172/pokemon-explorer/tree/main/pokemon-app",
     live_demo_link: "https://pokemon-app-one-nu.vercel.app/",
   },
   {
@@ -260,7 +327,7 @@ const projects = [
       },
     ],
     image: budget,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/ADEEB172/Budget-App",
     live_demo_link: "https://budget-app-psi-five.vercel.app/",
   },
 ];
