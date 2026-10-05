@@ -225,16 +225,20 @@ const projects = [
       "E-commerce website that allows users to browse and purchase products online. It features a clean and modern design, easy navigation, and a secure checkout process.",
     tags: [
       {
-        name: "html",
+        name: "React js",
         color: "blue-text-gradient",
       },
       {
-        name: "css",
+        name: "Express js",
         color: "green-text-gradient",
       },
       {
-        name: "javascript",
+        name: "Node js",
         color: "pink-text-gradient",
+      },
+        {
+        name: "Mongo db",
+        color: "purple-text-gradient",
       },
     ],
     image: forever,
@@ -246,22 +250,52 @@ const projects = [
     description:
       "Web application that allows users to edit and manipulate images online. It features a user-friendly interface, a wide range of editing tools, and the ability to save and share edited images.",
     tags: [
-      {
-        name: "html",
+          {
+        name: "React js",
         color: "blue-text-gradient",
       },
       {
-        name: "css",
+        name: "Express js",
         color: "green-text-gradient",
       },
       {
-        name: "javascript",
+        name: "Node js",
         color: "pink-text-gradient",
+      },
+        {
+        name: "Mongo db",
+        color: "purple-text-gradient",
       },
     ],
     image: imagify,
     source_code_link: "https://github.com/ADEEB172/Imagify",
     live_demo_link: "https://imagify-two-tau.vercel.app",
+  },
+   {
+    name: " Budget Tracker",
+    description:
+  "A full-stack budget management web application designed to help users track their budget and daily expenses in one place. Users can set a total budget, add, edit, and delete expenses, monitor total spending, and view their remaining balance through a clean and responsive dashboard.",
+    tags: [
+          {
+        name: "React js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Express js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Node js",
+        color: "pink-text-gradient",
+      },
+        {
+        name: "Mongo db",
+        color: "purple-text-gradient",
+      },
+    ],
+    image: budget,
+    source_code_link: "https://github.com/ADEEB172/Budget-Tracker",
+    live_demo_link: "https://bachat-two.vercel.app",
   },
   {
     name: "A Watch Website",
@@ -307,28 +341,6 @@ const projects = [
     source_code_link:
       "https://github.com/ADEEB172/pokemon-explorer/tree/main/pokemon-app",
     live_demo_link: "https://pokemon-app-one-nu.vercel.app/",
-  },
-  {
-    name: "Budget Tracker App",
-    description:
-      "A simple and effective budget tracking application that helps users manage their expenses and income.",
-    tags: [
-      {
-        name: "html",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "css",
-        color: "green-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: budget,
-    source_code_link: "https://github.com/ADEEB172/Budget-App",
-    live_demo_link: "https://budget-app-psi-five.vercel.app/",
   },
 ];
 

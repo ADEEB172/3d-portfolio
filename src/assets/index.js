@@ -32,9 +32,9 @@ import tesla from "./company/tesla.png";
 
 import watch from "./watch.png";
 import pokemon from "./pokemon.png";
-import budget from "./budget.png";
 import forever from "./forever.png";
 import imagify from "./imagify.png";
+import budget from "./budget.png";
 export {
   logo,
   backend,
@@ -67,7 +67,7 @@ export {
   tesla,
   watch,
   pokemon,
-  budget,
   forever,
   imagify,
+  budget,
 };
